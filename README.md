@@ -1,0 +1,27 @@
+# UltrAI.org — Open AI Benchmarks, MCP Registry & Monetization Intelligence
+
+Independent AI model performance & pricing telemetry, security-graded MCP server registry, interactive Token ROI calculator, and empirical AI monetization intelligence.
+
+## Features
+
+- **Model Benchmarks (`/benchmarks`)**: Side-by-side LLM quality index, coding score, speed (tokens/s), and blended API pricing synced via OpenRouter.
+- **Token ROI Calculator (`/calculator`)**: Real-time monthly & annual API spend estimator with workload presets.
+- **Security-Graded MCP Registry (`/registry`)**: Audited MCP servers & agent skills with A+/A/B grades and copy-paste JSON configs.
+- **AI Monetization Intelligence (`/intelligence`)**: Data-driven teardowns + automated **Live AI Radar** (Hacker News & GitHub MCP trending).
+- **Submit & Sponsor Portal (`/submit`)**: Free listing, expedited 48h audit, and B2B sponsorship workflow.
+- **SEO & GEO Ready**: Built-in `/llms.txt`, dynamic `/sitemap.xml`, and `/robots.txt`.
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+## Automated Daily Data Sync
+
+```bash
+npm run sync
+```
+
+Powered by `.github/workflows/daily-sync.yml` (runs daily at `00:30 UTC`). Optionally add `GEMINI_API_KEY` to GitHub repository secrets for automatic Chinese title translation.

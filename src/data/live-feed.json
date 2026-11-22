@@ -1,0 +1,146 @@
+{
+  "syncedAt": "2026-11-22T06:55:00.000Z",
+  "modelSyncStatus": "ready",
+  "stories": [
+    {
+      "id": "hn-seed-1",
+      "source": "Hacker News",
+      "tag": "Models & API",
+      "titleEn": "Prompt Caching & Cascade Model Routing Cut Our Production LLM Spend by 68%",
+      "titleZh": "生产实测：提示词缓存 + 多模型级联路由如何帮我们将 LLM 账单削减 68%",
+      "url": "https://news.ycombinator.com/",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 412,
+      "comments": 186,
+      "publishedAt": "2026-11-21T18:20:00.000Z"
+    },
+    {
+      "id": "hn-seed-2",
+      "source": "Hacker News",
+      "tag": "Agents & MCP",
+      "titleEn": "Model Context Protocol (MCP) Security Checklist for Enterprise Agent Deployments",
+      "titleZh": "企业级 Agent 部署必读：MCP 协议权限最小化与安全审计清单",
+      "url": "https://modelcontextprotocol.io/",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 328,
+      "comments": 142,
+      "publishedAt": "2026-11-21T14:05:00.000Z"
+    },
+    {
+      "id": "hn-seed-3",
+      "source": "Hacker News",
+      "tag": "Monetization",
+      "titleEn": "Why Usage-Based Hybrid Pricing Replaced Flat $9/mo AI Subscriptions in 2026",
+      "titleZh": "2026 AI 变现复盘：为什么“基础订阅 + 积分包”彻底取代了 $9 无限包月？",
+      "url": "https://news.ycombinator.com/",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 289,
+      "comments": 119,
+      "publishedAt": "2026-11-20T22:40:00.000Z"
+    },
+    {
+      "id": "hn-seed-4",
+      "source": "Hacker News",
+      "tag": "Models & API",
+      "titleEn": "Open-Weights MoE Models Reach Parity on Structured Extraction at 1/10th the Cost",
+      "titleZh": "开源权重 MoE 模型在结构化数据抽取任务上追平闭源旗舰，成本仅十分之一",
+      "url": "https://openrouter.ai/models",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 254,
+      "comments": 97,
+      "publishedAt": "2026-11-20T16:15:00.000Z"
+    },
+    {
+      "id": "hn-seed-5",
+      "source": "Hacker News",
+      "tag": "Monetization",
+      "titleEn": "GEO in Practice: Measuring Traffic Share from ChatGPT, Perplexity & Claude Citations",
+      "titleZh": "GEO 实战数据：量化来自 ChatGPT、Perplexity 与 Claude 引用链接的转化率",
+      "url": "https://ultrai.org/intelligence/geo-playbook-2026",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 215,
+      "comments": 84,
+      "publishedAt": "2026-11-19T19:50:00.000Z"
+    },
+    {
+      "id": "hn-seed-6",
+      "source": "Hacker News",
+      "tag": "Agents & MCP",
+      "titleEn": "Show HN: Zero-Config Read-Only SQL & Observability MCP for Indie SaaS Founders",
+      "titleZh": "Show HN：面向独立 SaaS 开发者的零配置只读 SQL 与线上监控 MCP 服务器",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "discussionUrl": "https://news.ycombinator.com/",
+      "points": 198,
+      "comments": 63,
+      "publishedAt": "2026-11-19T11:30:00.000Z"
+    }
+  ],
+  "trendingMcpRepos": [
+    {
+      "id": "modelcontextprotocol/servers",
+      "name": "servers",
+      "fullName": "modelcontextprotocol/servers",
+      "description": "Official reference implementations of Model Context Protocol (MCP) servers for filesystems, Git, databases, and web fetch.",
+      "stars": 48200,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-21T12:00:00Z",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "license": "MIT"
+    },
+    {
+      "id": "microsoft/playwright-mcp",
+      "name": "playwright-mcp",
+      "fullName": "microsoft/playwright-mcp",
+      "description": "Playwright MCP server providing structured accessibility-tree browser automation for autonomous coding & QA agents.",
+      "stars": 18400,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-21T09:30:00Z",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "mendableai/firecrawl-mcp-server",
+      "name": "firecrawl-mcp-server",
+      "fullName": "mendableai/firecrawl-mcp-server",
+      "description": "Official Firecrawl MCP server for scraping, crawling, and converting dynamic web pages into clean LLM-ready Markdown.",
+      "stars": 9850,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-20T17:45:00Z",
+      "url": "https://github.com/mendableai/firecrawl-mcp-server",
+      "license": "MIT"
+    },
+    {
+      "id": "supabase-community/supabase-mcp",
+      "name": "supabase-mcp",
+      "fullName": "supabase-community/supabase-mcp",
+      "description": "Connect AI assistants directly to Supabase projects for safe schema inspection, migrations, and read-only SQL analytics.",
+      "stars": 7620,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-20T15:10:00Z",
+      "url": "https://github.com/supabase-community/supabase-mcp",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "stripe/agent-toolkit",
+      "name": "agent-toolkit",
+      "fullName": "stripe/agent-toolkit",
+      "description": "Stripe Agent Toolkit & MCP server for creating payment links, managing metered usage billing, and inspecting subscriptions.",
+      "stars": 6430,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-19T20:00:00Z",
+      "url": "https://github.com/stripe/agent-toolkit",
+      "license": "MIT"
+    },
+    {
+      "id": "cloudflare/mcp-server-cloudflare",
+      "name": "mcp-server-cloudflare",
+      "fullName": "cloudflare/mcp-server-cloudflare",
+      "description": "Official Cloudflare MCP servers for managing Workers, KV, R2, D1, and inspecting real-time production observability logs.",
+      "stars": 5890,
+      "language": "TypeScript",
+      "updatedAt": "2026-11-19T14:20:00Z",
+      "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+      "license": "Apache-2.0"
+    }
+  ]
+}

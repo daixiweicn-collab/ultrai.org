@@ -1,0 +1,40 @@
+name: UltrAI Daily Auto-Sync
+
+on:
+  schedule:
+    # 每天 UTC 00:30（北京时间 08:30）自动同步一次
+    - cron: "30 0 * * *"
+  workflow_dispatch: # 支持在 GitHub 页面手动一键触发
+
+permissions:
+  contents: write
+
+jobs:
+  sync-intelligence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run UltrAI Data & Radar Sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/sync-data.mjs
+
+      - name: Commit updated telemetry & news feed
+        run: |
+          git config user.name "ultrai-bot"
+          git config user.email "bot@ultrai.org"
+          git add src/data/live-models.json src/data/live-feed.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): daily auto-sync AI benchmarks, MCP repos & radar"
+            git push
+          else
+            echo "No data changes today."
+          fi
