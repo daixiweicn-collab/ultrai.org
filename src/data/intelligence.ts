@@ -13,6 +13,7 @@ export interface IntelligenceReport {
     labelEn: string;
     labelZh: string;
     value: string;
+    valueZh?: string;
   }[];
   sectionsEn: {
     heading: string;
@@ -42,8 +43,18 @@ export const INTELLIGENCE_REPORTS: IntelligenceReport[] = [
       "基于 42 个盈利独立 AI 网站的真实数据拆解：混合积分定价、枯燥 B2B 垂直场景与基础设施持续返佣，其客户生命周期价值（LTV）是泛套壳站的 4.3 倍。",
     keyMetrics: [
       { labelEn: "Median Gross Margin", labelZh: "中位毛利率", value: "78.4%" },
-      { labelEn: "Top Pricing Model", labelZh: "最稳健定价", value: "Base + Credits" },
-      { labelEn: "Avg Affiliate Commission", labelZh: "平均持续返佣", value: "25% Rec." },
+      {
+        labelEn: "Top Pricing Model",
+        labelZh: "最稳健定价",
+        value: "Base + Credits",
+        valueZh: "基础订阅 + 积分",
+      },
+      {
+        labelEn: "Avg Affiliate Commission",
+        labelZh: "平均持续返佣",
+        value: "25% Rec.",
+        valueZh: "25% 持续分成",
+      },
     ],
     sectionsEn: [
       {
@@ -100,9 +111,19 @@ export const INTELLIGENCE_REPORTS: IntelligenceReport[] = [
     excerptZh:
       "传统搜索的泛信息点击率下滑了 34%。本文拆解如何通过 llms.txt、结构化评测表与独家基准数据，让你的站点被主流大模型高频引用并带来高意向精准流量。",
     keyMetrics: [
-      { labelEn: "AI Referral Conv. Rate", labelZh: "AI 引荐转化率", value: "3.1x SEO" },
+      {
+        labelEn: "AI Referral Conv. Rate",
+        labelZh: "AI 引荐转化率",
+        value: "3.1x SEO",
+        valueZh: "传统 SEO 3.1 倍",
+      },
       { labelEn: "Key Technical File", labelZh: "核心规范文件", value: "/llms.txt" },
-      { labelEn: "Highest Cited Format", labelZh: "最高引用格式", value: "Data Tables" },
+      {
+        labelEn: "Highest Cited Format",
+        labelZh: "最高引用格式",
+        value: "Data Tables",
+        valueZh: "结构化数据表",
+      },
     ],
     sectionsEn: [
       {
@@ -158,7 +179,12 @@ export const INTELLIGENCE_REPORTS: IntelligenceReport[] = [
       "随着 MCP 成为智能体连接外部 API 的事实标准，“工具发现、权限安全审计与按次微支付”正在催生 AI 时代的新一代应用商店红利。",
     keyMetrics: [
       { labelEn: "Active Public MCPs", labelZh: "公开 MCP 数量", value: "14,200+" },
-      { labelEn: "Enterprise Blocker", labelZh: "企业采购最大痛点", value: "Security Audit" },
+      {
+        labelEn: "Enterprise Blocker",
+        labelZh: "企业采购最大痛点",
+        value: "Security Audit",
+        valueZh: "安全审计",
+      },
       { labelEn: "Avg Listing Fee", labelZh: "认证收录均价", value: "$49–$199" },
     ],
     sectionsEn: [

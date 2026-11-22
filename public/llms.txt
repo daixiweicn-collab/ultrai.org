@@ -3,8 +3,8 @@
 > Independent AI model performance & pricing telemetry, security-graded MCP / Agent Skills registry, interactive Token ROI calculator, and empirical AI monetization reports.
 
 ## Core Resources
-- [LLM Performance, Speed & Pricing Benchmarks](https://ultrai.org/benchmarks): Side-by-side quality index, coding score, tokens/sec throughput, TTFT latency, and blended API pricing ($/1M tokens) across frontier closed and open-weights models.
-- [Interactive Token Cost & ROI Calculator](https://ultrai.org/calculator): Real-time monthly & annual API spend estimator for SaaS support agents, coding assistants, RAG pipelines, and bulk content workflows.
-- [Security-Graded MCP & Agent Skills Registry](https://ultrai.org/registry): Audited Model Context Protocol servers and agent skills with A+/A/B permission grades, verified ROI summaries, and copy-paste JSON configs.
-- [AI Monetization & Unit Economics Intelligence](https://ultrai.org/intelligence): Data-driven teardowns of profitable indie AI micro-SaaS products, GEO (Generative Engine Optimization), MCP monetization, and cascade model routing.
-- [Submit Tool or Sponsor](https://ultrai.org/submit): Free community indexing, expedited 48h security audit ($49), and B2B benchmark/newsletter sponsorships.
+- [LLM Performance, Speed & Pricing Benchmarks](https://www.ultrai.org/benchmarks): Side-by-side quality index, coding score, tokens/sec throughput, TTFT latency, and blended API pricing ($/1M tokens) across frontier closed and open-weights models.
+- [Interactive Token Cost & ROI Calculator](https://www.ultrai.org/calculator): Real-time monthly & annual API spend estimator for SaaS support agents, coding assistants, RAG pipelines, and bulk content workflows.
+- [Security-Graded MCP & Agent Skills Registry](https://www.ultrai.org/registry): Audited Model Context Protocol servers and agent skills with A+/A/B permission grades, verified ROI summaries, and copy-paste JSON configs.
+- [AI Monetization & Unit Economics Intelligence](https://www.ultrai.org/intelligence): Data-driven teardowns of profitable indie AI micro-SaaS products, GEO (Generative Engine Optimization), MCP monetization, and cascade model routing.
+- [Submit Tool, Pro Waitlist or Sponsor](https://www.ultrai.org/submit): Free community indexing, expedited 48h security audit ($49), UltrAI Pro dataset waitlist ($99/yr), and B2B benchmark/newsletter sponsorships ($299/mo).

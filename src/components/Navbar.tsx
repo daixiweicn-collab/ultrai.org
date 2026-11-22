@@ -68,7 +68,7 @@ export function Navbar() {
                 UltrAI<span className="text-sky-400">.org</span>
               </span>
               <span className="hidden rounded-full border border-emerald-500/30 bg-emerald-500/10 px-1.5 py-0.5 font-mono text-[10px] font-medium text-emerald-400 sm:inline-block">
-                OPEN
+                {t("OPEN", "开放")}
               </span>
             </div>
             <span

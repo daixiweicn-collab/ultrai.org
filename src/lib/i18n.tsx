@@ -16,16 +16,33 @@ interface AppContextValue {
 
 const AppContext = createContext<AppContextValue | undefined>(undefined);
 
+function safeGetStorage(key: string): string | null {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeSetStorage(key: string, value: string) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // 隐私模式或禁用存储时优雅忽略
+  }
+}
+
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    const savedLocale = window.localStorage.getItem("ultrai_locale") as Locale | null;
+    const savedLocale = safeGetStorage("ultrai_locale") as Locale | null;
     if (savedLocale === "en" || savedLocale === "zh") {
       setLocaleState(savedLocale);
+      document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : "en";
     }
-    const savedTheme = window.localStorage.getItem("ultrai_theme") as Theme | null;
+    const savedTheme = safeGetStorage("ultrai_theme") as Theme | null;
     if (savedTheme === "light" || savedTheme === "dark") {
       setTheme(savedTheme);
       document.documentElement.classList.toggle("light", savedTheme === "light");
@@ -34,7 +51,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = (next: Locale) => {
     setLocaleState(next);
-    window.localStorage.setItem("ultrai_locale", next);
+    safeSetStorage("ultrai_locale", next);
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = next === "zh" ? "zh-CN" : "en";
+    }
   };
 
   const toggleLocale = () => {
@@ -44,8 +64,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    window.localStorage.setItem("ultrai_theme", next);
-    document.documentElement.classList.toggle("light", next === "light");
+    safeSetStorage("ultrai_theme", next);
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.toggle("light", next === "light");
+    }
   };
 
   const t = (en: string, zh: string) => (locale === "en" ? en : zh);

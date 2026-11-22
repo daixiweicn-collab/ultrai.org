@@ -38,14 +38,14 @@ export function Footer() {
               <a
                 href="/llms.txt"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 rounded-md border px-2.5 py-1 text-sky-400 transition hover:border-sky-400"
                 style={{ borderColor: "var(--border-subtle)" }}
               >
                 /llms.txt <ExternalLink className="h-3 w-3" />
               </a>
               <span style={{ color: "var(--text-muted)" }}>
-                GEO-Ready Index • Updated Daily
+                {t("GEO-Ready Index • Updated Daily", "GEO 友好索引 • 每日更新")}
               </span>
             </div>
           </div>
@@ -95,13 +95,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/submit#sponsor" className="hover:text-sky-400">
+                <Link href="/submit?plan=sponsor#sponsor" className="hover:text-sky-400">
                   {t("Sponsor Benchmarks", "榜单与周刊赞助")}
                 </Link>
               </li>
               <li>
+                <Link href="/submit?plan=pro#sponsor" className="hover:text-sky-400">
+                  {t("UltrAI Pro Waitlist", "UltrAI Pro 会员预约")}
+                </Link>
+              </li>
+              <li>
                 <a href="/sitemap.xml" className="hover:text-sky-400">
-                  Sitemap
+                  {t("Sitemap", "站点地图")}
                 </a>
               </li>
             </ul>
@@ -115,7 +120,10 @@ export function Footer() {
             color: "var(--text-muted)",
           }}
         >
-          <p>© {new Date().getFullYear()} UltrAI.org — Open AI Intelligence Initiative.</p>
+          <p suppressHydrationWarning>
+            © {new Date().getUTCFullYear()} UltrAI.org —{" "}
+            {t("Open AI Intelligence Initiative.", "开放 AI 商业情报计划。")}
+          </p>
           <p>
             {t(
               "Disclosure: Some deployment links contain affiliate tracking at zero extra cost to you.",

@@ -22,6 +22,7 @@ export interface RegistryItem {
   roiNoteEn: string;
   roiNoteZh: string;
   installCmd: string;
+  configFileName?: string;
   mcpConfigSnippet: string;
   url: string;
   featured?: boolean;
@@ -45,6 +46,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Cuts E2E QA & web scraping maintenance time by ~75%.",
     roiNoteZh: "降低 75% 端到端测试与竞品网页采集维护成本。",
     installCmd: "npx @playwright/mcp@latest",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "playwright": {
@@ -73,6 +75,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Accelerates indie SaaS MVP backend shipping by 3x.",
     roiNoteZh: "独立开发者 Micro-SaaS 后端交付提速 3 倍。",
     installCmd: "npx -y @supabase/mcp-server-supabase@latest",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "supabase": {
@@ -101,6 +104,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Reduces token waste by 60% vs raw HTML ingestion.",
     roiNoteZh: "相比直接喂入 HTML 减少 60% Token 浪费。",
     installCmd: "npx -y firecrawl-mcp",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "firecrawl": {
@@ -130,6 +134,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Automates SaaS billing ops & usage-based metering.",
     roiNoteZh: "全自动打通 AI 按量计费与 SaaS 财务对账。",
     installCmd: "npx -y @stripe/mcp --tools=all",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "stripe": {
@@ -158,6 +163,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Zero-ops global edge hosting under $5/mo for micro-SaaS.",
     roiNoteZh: "微型 SaaS 全球边缘部署运维成本压低至每月 $5 以内。",
     installCmd: "npx mcp-remote https://observability.mcp.cloudflare.com/sse",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "cloudflare": {
@@ -185,6 +191,7 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
     roiNoteEn: "Cuts hallucination rates on current-events queries by 68%.",
     roiNoteZh: "时效性情报检索幻觉率降低 68%。",
     installCmd: "npx -y tavily-mcp@latest",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
     "tavily": {
@@ -212,38 +219,40 @@ export const REGISTRY_ITEMS: RegistryItem[] = [
       "自动化检测品牌在 ChatGPT/Perplexity/Claude 中的引用占比，并生成合规 llms.txt。",
     roiNoteEn: "Essential playbook for capturing 2026 AI search traffic.",
     roiNoteZh: "2026 年抢占 AI 搜索推荐流量的必备增长技能包。",
-    installCmd: "npx ultrai-skills add geo-visibility-audit",
+    installCmd: "curl -fsSL https://www.ultrai.org/llms.txt",
+    configFileName: "SKILL.md",
     mcpConfigSnippet: `# Agent Skill Manifest (SKILL.md)
 name: geo-visibility-audit
 triggers: ["audit brand AI visibility", "generate llms.txt"]
 outputs: ["citation_matrix.json", "public/llms.txt"]`,
-    url: "https://ultrai.org/intelligence/geo-playbook-2026",
+    url: "/intelligence/geo-playbook-2026",
   },
   {
-    id: "sec-edgar-quant-mcp",
-    name: "SEC Filing & Earnings Quant MCP",
-    type: "Workflow",
+    id: "apexcharts-data-mcp",
+    name: "ApexCharts Analytics & Viz MCP",
+    type: "MCP Server",
     category: "data",
-    grade: "B",
-    verified: false,
-    stars: "5.1k",
-    weeklyInstalls: "12k",
+    grade: "A",
+    verified: true,
+    stars: "14.8k",
+    weeklyInstalls: "19k",
     pricing: "Open Source",
     summaryEn:
-      "Automated 10-K / 10-Q extraction pipeline converting financial tables into comparable JSON metrics.",
+      "Generate publication-grade interactive charts, financial dashboards, and KPI visualizations directly from agent data streams.",
     summaryZh:
-      "自动解析美股 10-K/10-Q 财报表格并转化为可横向对比的 JSON 指标流。",
-    roiNoteEn: "Saves equity analysts 6+ hours per earnings season.",
-    roiNoteZh: "财报季为每位投研分析师节省 6 小时以上人工摘录。",
-    installCmd: "uvx sec-edgar-mcp --user-agent 'UltrAI research@ultrai.org'",
+      "让智能体直接从业务与财报数据流生成可交互的商业图表、财务看板与 KPI 可视化。",
+    roiNoteEn: "Eliminates hours of manual BI chart scripting for weekly reports.",
+    roiNoteZh: "免去每周手写 BI 图表脚本，分析汇报交付效率提升 5 倍。",
+    installCmd: "npx -y apexcharts-mcp",
+    configFileName: "mcp_config.json",
     mcpConfigSnippet: `{
   "mcpServers": {
-    "sec-edgar": {
-      "command": "uvx",
-      "args": ["sec-edgar-mcp"]
+    "apexcharts": {
+      "command": "npx",
+      "args": ["-y", "apexcharts-mcp"]
     }
   }
 }`,
-    url: "https://github.com/ultrai-org/sec-edgar-mcp",
+    url: "https://github.com/apexcharts/apexcharts-mcp",
   },
 ];

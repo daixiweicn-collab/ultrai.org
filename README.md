@@ -25,3 +25,9 @@ npm run sync
 ```
 
 Powered by `.github/workflows/daily-sync.yml` (runs daily at `00:30 UTC`). Optionally add `GEMINI_API_KEY` to GitHub repository secrets for automatic Chinese title translation.
+
+## Production Environment Variables (Optional)
+
+- `NEXT_PUBLIC_SITE_URL`: Canonical site URL (default: `https://www.ultrai.org`).
+- `SUBMISSION_WEBHOOK_URL`: Webhook endpoint (e.g. Supabase Edge Function, Slack, Feishu, Make/Zapier) to persist `/api/submit` tool & Pro waitlist submissions in Serverless environments.
+- `SUBSCRIBE_WEBHOOK_URL`: Webhook endpoint to persist `/api/subscribe` newsletter signups (falls back to `SUBMISSION_WEBHOOK_URL` if unset).

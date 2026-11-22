@@ -4,16 +4,46 @@ import React, { useState } from "react";
 import { Mail, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 import { useApp } from "@/lib/i18n";
 
+type ErrorCode =
+  | "INVALID_EMAIL"
+  | "RATE_LIMITED"
+  | "STORAGE_UNAVAILABLE"
+  | "NETWORK"
+  | "GENERIC"
+  | null;
+
 export function NewsletterBanner() {
   const { t } = useApp();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
+  const [errorCode, setErrorCode] = useState<ErrorCode>(null);
+
+  function getErrorMessage(code: ErrorCode): string {
+    switch (code) {
+      case "INVALID_EMAIL":
+        return t("Please provide a valid email address.", "请输入有效的电子邮箱地址。");
+      case "RATE_LIMITED":
+        return t(
+          "Too many requests. Please try again in a few minutes.",
+          "请求过于频繁，请几分钟后再试。"
+        );
+      case "STORAGE_UNAVAILABLE":
+        return t(
+          "Subscription service is temporarily busy. Please retry shortly.",
+          "订阅服务暂时繁忙，请稍后重试。"
+        );
+      case "NETWORK":
+        return t("Network error. Please retry.", "网络异常，请重试。");
+      default:
+        return t("Subscription failed. Please retry.", "订阅失败，请稍后重试。");
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
     setStatus("loading");
+    setErrorCode(null);
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -23,20 +53,14 @@ export function NewsletterBanner() {
       const data = await res.json();
       if (!res.ok) {
         setStatus("error");
-        setMessage(data.error || t("Subscription failed.", "订阅失败，请稍后重试。"));
+        setErrorCode((data.code as ErrorCode) || "GENERIC");
       } else {
         setStatus("success");
         setEmail("");
-        setMessage(
-          t(
-            "You're in! Weekly AI ROI & benchmark telemetry is on its way.",
-            "订阅成功！每周一发送精选 AI 商业变现情报与模型性价比异动。"
-          )
-        );
       }
     } catch {
       setStatus("error");
-      setMessage(t("Network error. Please retry.", "网络异常，请重试。"));
+      setErrorCode("NETWORK");
     }
   }
 
@@ -69,7 +93,12 @@ export function NewsletterBanner() {
           {status === "success" ? (
             <div className="flex items-center gap-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-sm text-emerald-400">
               <CheckCircle2 className="h-5 w-5 shrink-0" />
-              <span>{message}</span>
+              <span>
+                {t(
+                  "You're in! Weekly AI ROI & benchmark telemetry is on its way.",
+                  "订阅成功！每周一发送精选 AI 商业变现情报与模型性价比异动。"
+                )}
+              </span>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 sm:flex-row">
@@ -102,7 +131,7 @@ export function NewsletterBanner() {
             </form>
           )}
           {status === "error" && (
-            <p className="mt-2 text-xs text-rose-400">{message}</p>
+            <p className="mt-2 text-xs text-rose-400">{getErrorMessage(errorCode)}</p>
           )}
           <p
             className="mt-2.5 text-[11px]"
