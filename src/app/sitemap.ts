@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
+    "/free-tokens",
     "/benchmarks",
     "/calculator",
     "/registry",
@@ -14,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : route === "/free-tokens" ? 0.9 : 0.8,
   }));
 
   const reportPages = INTELLIGENCE_REPORTS.map((r) => ({

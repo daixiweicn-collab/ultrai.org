@@ -3,6 +3,7 @@
 > Independent AI model performance & pricing telemetry, security-graded MCP / Agent Skills registry, interactive Token ROI calculator, and empirical AI monetization reports.
 
 ## Core Resources
+- [Free AI API Tokens, Credits & Live LLM Promos](https://www.ultrai.org/free-tokens): Auto-synced list of $0/1M OpenRouter free models, zero-credit-card free API tiers (Google AI Studio, Groq, GitHub Models, Cerebras, SiliconFlow), off-peak discounts, and cloud AI startup grants up to $350K.
 - [LLM Performance, Speed & Pricing Benchmarks](https://www.ultrai.org/benchmarks): Side-by-side quality index, coding score, tokens/sec throughput, TTFT latency, and blended API pricing ($/1M tokens) across frontier closed and open-weights models.
 - [Interactive Token Cost & ROI Calculator](https://www.ultrai.org/calculator): Real-time monthly & annual API spend estimator for SaaS support agents, coding assistants, RAG pipelines, and bulk content workflows.
 - [Security-Graded MCP & Agent Skills Registry](https://www.ultrai.org/registry): Audited Model Context Protocol servers and agent skills with A+/A/B permission grades, verified ROI summaries, and copy-paste JSON configs.

@@ -10,6 +10,7 @@ import {
   Compass,
   ExternalLink,
   FileBarChart2,
+  Gift,
   ShieldCheck,
   TrendingUp,
   Zap,
@@ -116,6 +117,13 @@ export function HomeClient() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
+              href="/free-tokens"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:brightness-110"
+            >
+              <Gift className="h-4 w-4" />
+              {t("Free AI Tokens & Promos", "免费 AI Token 与厂商优惠")}
+            </Link>
+            <Link
               href="/benchmarks"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/25 transition hover:brightness-110"
             >
@@ -124,7 +132,7 @@ export function HomeClient() {
             </Link>
             <Link
               href="/calculator"
-              className="intel-card inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold"
+              className="intel-card inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold"
             >
               <Calculator className="h-4 w-4 text-emerald-400" />
               {t("Calculate Token ROI", "测算 API Token 成本")}
@@ -168,6 +176,40 @@ export function HomeClient() {
           })}
         </div>
       </section>
+
+      {/* 免费 AI Token 与优惠实时导流条 */}
+      <Link
+        href="/free-tokens"
+        className="group mt-6 flex flex-col justify-between gap-3 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-indigo-500/10 px-5 py-4 transition hover:border-emerald-400/60 sm:flex-row sm:items-center"
+      >
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400">
+            <Gift className="h-4 w-4" />
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center gap-2 text-sm font-bold">
+              <span>
+                {t(
+                  "Live Free AI Token Tracker: $0/1M Models, Zero-Card Tiers & $350K Cloud Grants",
+                  "全网免费 AI Token 实时聚合：每日自动更新 $0 模型、免绑卡 API 与最高 $350K 创业赠金"
+                )}
+              </span>
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-400">
+                {t("UPDATED HOURLY", "实时更新")}
+              </span>
+            </div>
+            <p className="mt-0.5 text-xs" style={{ color: "var(--text-secondary)" }}>
+              {t(
+                "Google AI Studio, OpenRouter :free, Groq, Cerebras, GitHub Models, SiliconFlow, DeepSeek off-peak & Azure/GCP/AWS credits.",
+                "覆盖 Google AI Studio、OpenRouter :free、Groq、GitHub Models、硅基流动、阿里云百炼、DeepSeek 错峰 2.5 折及三大云创业赠金。"
+              )}
+            </p>
+          </div>
+        </div>
+        <span className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-emerald-400 transition-transform group-hover:translate-x-1">
+          {t("Claim Free Tokens →", "立即领免费额度 →")}
+        </span>
+      </Link>
 
       {/* 模块一：Top 模型评测速览 */}
       <section className="mt-16">

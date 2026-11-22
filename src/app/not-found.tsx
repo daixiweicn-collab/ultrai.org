@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Activity, ArrowLeft, Compass, FileQuestion } from "lucide-react";
+import { Activity, ArrowLeft, Compass, FileQuestion, Gift } from "lucide-react";
 import { useApp } from "@/lib/i18n";
 
 export default function NotFound() {
@@ -37,6 +37,13 @@ export default function NotFound() {
           >
             <ArrowLeft className="h-4 w-4" />
             {t("Back to Home", "返回首页")}
+          </Link>
+          <Link
+            href="/free-tokens"
+            className="intel-card inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold hover:text-emerald-400"
+          >
+            <Gift className="h-4 w-4 text-emerald-400" />
+            {t("Free Tokens", "免费 Token")}
           </Link>
           <Link
             href="/benchmarks"

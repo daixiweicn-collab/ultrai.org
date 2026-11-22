@@ -59,6 +59,11 @@ export function Footer() {
               style={{ color: "var(--text-secondary)" }}
             >
               <li>
+                <Link href="/free-tokens" className="text-emerald-400 hover:underline">
+                  {t("Free Tokens & Promos", "免费 AI Token 与优惠")}
+                </Link>
+              </li>
+              <li>
                 <Link href="/benchmarks" className="hover:text-sky-400">
                   {t("Model Benchmarks", "大模型独立评测榜")}
                 </Link>

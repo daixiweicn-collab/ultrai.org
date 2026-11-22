@@ -8,6 +8,7 @@ import {
   Calculator,
   Compass,
   FileBarChart2,
+  Gift,
   Globe,
   Menu,
   Moon,
@@ -23,6 +24,12 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
+    {
+      href: "/free-tokens",
+      label: t("Free Tokens", "免费 Token"),
+      icon: Gift,
+      badge: t("FREE", "福利"),
+    },
     {
       href: "/benchmarks",
       label: t("Benchmarks", "模型评测榜"),
@@ -100,6 +107,11 @@ export function Navbar() {
               >
                 <Icon className="h-4 w-4" />
                 {item.label}
+                {"badge" in item && item.badge && (
+                  <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-400">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             );
           })}
@@ -171,10 +183,17 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-slate-500/10"
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-slate-500/10"
                 >
-                  <Icon className="h-4 w-4 text-sky-400" />
-                  {item.label}
+                  <span className="flex items-center gap-2">
+                    <Icon className="h-4 w-4 text-sky-400" />
+                    {item.label}
+                  </span>
+                  {"badge" in item && item.badge && (
+                    <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-400">
+                      {item.badge}
+                    </span>
+                  )}
                 </Link>
               );
             })}

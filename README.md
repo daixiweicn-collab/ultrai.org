@@ -4,6 +4,7 @@ Independent AI model performance & pricing telemetry, security-graded MCP server
 
 ## Features
 
+- **Free AI Tokens & Live Promos (`/free-tokens`)**: Hourly & daily auto-synced `$0/1M` OpenRouter free models, zero-credit-card free API tiers, China-direct free quotas, off-peak discounts, and up to `$350K` cloud AI startup grants.
 - **Model Benchmarks (`/benchmarks`)**: Side-by-side LLM quality index, coding score, speed (tokens/s), and blended API pricing synced via OpenRouter.
 - **Token ROI Calculator (`/calculator`)**: Real-time monthly & annual API spend estimator with workload presets.
 - **Security-Graded MCP Registry (`/registry`)**: Audited MCP servers & agent skills with A+/A/B grades and copy-paste JSON configs.
