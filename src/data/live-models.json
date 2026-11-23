@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-22T13:07:08.760Z",
+  "syncedAt": "2026-11-23T01:47:42.969Z",
   "totalTrackedOnOpenRouter": 476,
   "overrides": {
     "claude-4-sonnet": {
@@ -27,22 +27,22 @@
       "contextK": 1048
     },
     "gemini-2.5-flash": {
-      "sourceModelId": "google/gemini-2.5-flash-image",
+      "sourceModelId": "google/gemini-2.5-flash",
       "inputPrice": 0.3,
       "outputPrice": 2.5,
-      "contextK": 33
+      "contextK": 1049
     },
     "deepseek-v3": {
-      "sourceModelId": "deepseek/deepseek-chat-v3.1",
-      "inputPrice": 0.25,
-      "outputPrice": 0.95,
+      "sourceModelId": "deepseek/deepseek-chat",
+      "inputPrice": 0.257,
+      "outputPrice": 1.029,
       "contextK": 164
     },
     "qwen-3-235b": {
-      "sourceModelId": "qwen/qwen3-235b-a22b-thinking-2507",
-      "inputPrice": 0.45,
-      "outputPrice": 3.5,
-      "contextK": 128
+      "sourceModelId": "qwen/qwen-2.5-72b-instruct",
+      "inputPrice": 0.36,
+      "outputPrice": 0.4,
+      "contextK": 33
     },
     "gpt-4.1-mini": {
       "sourceModelId": "openai/gpt-4.1-mini",
@@ -55,12 +55,6 @@
       "inputPrice": 0.35,
       "outputPrice": 1,
       "contextK": 524
-    },
-    "o3-mini": {
-      "sourceModelId": "openai/o3-mini:batch",
-      "inputPrice": 0.55,
-      "outputPrice": 2.2,
-      "contextK": 200
     }
   }
 }
